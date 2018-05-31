@@ -1,0 +1,213 @@
+file 68136 1526283605                                           
+version 2
+run TwoHostIntegratedInCSMA-0-20180514-10:26:50-14896
+attr configname TwoHostIntegratedInCSMA
+attr datetime 20180514-10:26:50
+attr experiment TwoHostIntegratedInCSMA
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network WirelessA2
+attr processid 14896
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param WirelessA2.hostPU1.numUdpApps 1
+param WirelessA2.hostPU1.udpApp[0].typename "\"UDPBasicApp\""
+param WirelessA2.hostPU1.udpApp[0].destAddresses "\"hostPU2\""
+param WirelessA2.hostPU1.udpApp[0].destPort 5000
+param WirelessA2.hostPU1.udpApp[0].messageLength 1000B
+param WirelessA2.hostPU1.udpApp[0].sendInterval exponential(2ms)
+param WirelessA2.hostPU1.udpApp[0].packetName "\"UDPData\""
+param WirelessA2.hostPU2.numUdpApps 1
+param WirelessA2.hostPU2.udpApp[0].typename "\"UDPSink\""
+param WirelessA2.hostPU2.udpApp[0].localPort 5000
+param *.hostPU1.wlan[0].typename "\"WirelessNic\""
+param *.hostPU1.wlan[0].macType "\"CSMA\""
+param *.hostPU1.wlan[0].mac.useMACAcks false
+param *.hostPU1.wlan[0].radio.transmitter.communicationRange 500m
+param *.hostPU2.wlan[0].typename "\"WirelessNic\""
+param *.hostPU2.wlan[0].macType "\"CSMA\""
+param *.hostPU2.wlan[0].mac.useMACAcks false
+param *.hostPU2.wlan[0].radio.transmitter.communicationRange 500m
+param *.hostA.wlan[0].radio.receiver.ignoreInterference false
+param *.hostB.wlan[0].radio.receiver.ignoreInterference false
+param *.hostPU1.wlan[0].radio.receiver.ignoreInterference false
+param *.hostPU2.wlan[0].radio.receiver.ignoreInterference false
+param *.host*.wlan[0].radio.transmitter.interferenceRange 500m
+param WirelessA2.hostPU1.**.bitrate 1Mbps
+param WirelessA2.hostPU2.**.bitrate 1Mbps
+param *.hostPU1.wlan[0].radio.displayCommunicationRange true
+param *.hostA.wlan[0].mac.useMACAcks false
+param *.hostB.wlan[0].mac.useMACAcks false
+param *.host*.wlan[0].typename "\"WirelessNic\""
+param *.host*.wlan[0].radioType "\"IdealRadio\""
+param *.hostA.wlan[0].macType "\"CSMA\""
+param *.hostB.wlan[0].macType "\"CSMA\""
+param *.visualizer.physicalLinkVisualizer.displayLinks true
+param *.visualizer.dataLinkVisualizer.displayLinks true
+param *.visualizer.networkRouteVisualizer.displayRoutes true
+param *.visualizer.*LinkVisualizer.lineShift 0
+param *.visualizer.networkRouteVisualizer.lineShift 0
+param *.visualizer.networkRouteVisualizer.packetFilter "\"UDPData*\""
+param *.host*.wlan[0].radio.receiver.ignoreInterference false
+param *.host*.wlan[0].radio.transmitter.interferenceRange 500m
+param *.hostA.wlan[0].radio.displayInterferenceRange true
+param *.visualizer.dataLinkVisualizer.packetFilter "\"\""
+param *.hostA.wlan[0].radio.displayCommunicationRange true
+param *.visualizer.sceneVisualizer.descriptionFigure "\"title\""
+param *.visualizer.mediumVisualizer.displaySignals true
+param *.visualizer.physicalLinkVisualizer.displayLinks true
+param *.visualizer.physicalLinkVisualizer.packetFilter "\"UDPData*\""
+param *.host*.networkLayer.arpType "\"GlobalARP\""
+param *.hostA.numUdpApps 1
+param *.hostA.udpApp[0].typename "\"UDPBasicApp\""
+param *.hostA.udpApp[0].destAddresses "\"hostB\""
+param *.hostA.udpApp[0].destPort 5000
+param *.hostA.udpApp[0].messageLength 1000B
+param *.hostA.udpApp[0].sendInterval exponential(2ms)
+param *.hostA.udpApp[0].packetName "\"UDPData\""
+param *.hostB.numUdpApps 1
+param *.hostB.udpApp[0].typename "\"UDPSink\""
+param *.hostB.udpApp[0].localPort 5000
+param *.host*.wlan[0].typename "\"IdealWirelessNic\""
+param *.host*.wlan[0].mac.useAck false
+param *.host*.wlan[0].mac.fullDuplex false
+param *.host*.wlan[0].radio.transmitter.communicationRange 500m
+param *.host*.wlan[0].radio.receiver.ignoreInterference true
+param *.host*.**.bitrate 1Mbps
+
+vector 0 WirelessA2.hostA.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 1 WirelessA2.hostB.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 2 WirelessA2.hostPU1.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 3 WirelessA2.hostPU2.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 4 WirelessA2.hostA.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 5 WirelessA2.hostB.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 6 WirelessA2.hostPU1.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 7 WirelessA2.hostPU2.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 8 WirelessA2.hostPU1.udpApp[0] sentPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, vector(packetBytes)"
+vector 9 WirelessA2.hostPU1.udp sentPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, vector(packetBytes)"
+vector 10 WirelessA2.hostPU1.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 11 WirelessA2.hostA.udpApp[0] sentPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, vector(packetBytes)"
+vector 12 WirelessA2.hostA.udp sentPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, vector(packetBytes)"
+vector 13 WirelessA2.hostPU2.udp rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, vector(packetBytes)"
+vector 14 WirelessA2.hostPU2.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr title "packets passed up, vector(count)"
+vector 15 WirelessA2.hostPU2.udpApp[0] rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, vector(packetBytes)"
+vector 16 WirelessA2.hostPU2.udpApp[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source messageAge(rcvdPk)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 17 WirelessA2.hostPU2.udpApp[0] rcvdPkSeqNo:vector ETV
+attr interpolationmode none
+attr source appPkSeqNo(rcvdPk)
+attr title "received packet sequence number, vector"
+vector 18 WirelessA2.hostA.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 19 WirelessA2.hostB.udp rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, vector(packetBytes)"
+vector 20 WirelessA2.hostB.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr title "packets passed up, vector(count)"
+vector 21 WirelessA2.hostB.udpApp[0] rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, vector(packetBytes)"
+vector 22 WirelessA2.hostB.udpApp[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source messageAge(rcvdPk)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 23 WirelessA2.hostB.udpApp[0] rcvdPkSeqNo:vector ETV
+attr interpolationmode none
+attr source appPkSeqNo(rcvdPk)
+attr title "received packet sequence number, vector"
+vector 24 WirelessA2.hostPU2.udpApp[0] throughput:vector ETV
+attr source throughput(rcvdPk)
+attr title "throughput, vector"
+attr unit bps
+vector 25 WirelessA2.hostB.udpApp[0] throughput:vector ETV
+attr source throughput(rcvdPk)
+attr title "throughput, vector"
+attr unit bps
+0	8186 1844 0 3846 0 0.498599208424 76 0 3 187 485
+1	10030 18 0 0 0 0 2 0 2 2 4
+2	10048 1875 0 3855 0 0.498620318601 77 0 3 190 494
+3	11923 18 0 0 0 0 2 0 2 2 4
+4	11941 3023 0 3857 0 0.498812985729 123 0 3 135 273
+5	14964 3182 0 3859 0 0.498813810345 132 1 3 264 642
+6	18146 3026 0 3855 0 0.498620318601 123 0 3 132 264
+7	21172 1866 0 3858 0 0.498813652857 76 1 3 152 380
+8	23038 7382 17 3839 0.002076318601 0.497320106384 267 1000 1000 267000 267000000
+9	30420 7382 19 3840 0.002076318601 0.497320106384 267 1008 1008 269136 271289088
+10	37802 3864 27 3856 0.002524318601 0.498812318601 150 0 2 151 227
+11	41666 7129 36 3833 0.003719208424 0.495000900188 249 1000 1000 249000 249000000
+12	48795 7130 38 3834 0.003719208424 0.495000900188 249 1008 1008 250992 252999936
+13	55925 1064 85 3793 0.010941652857 0.490045652857 37 1008 1008 37296 37594368
+14	56989 981 85 3793 0.010941652857 0.490045652857 37 1 37 703 17575
+15	57970 1064 86 3794 0.010941652857 0.490045652857 37 1000 1000 37000 37000000
+16	59034 1428 86 3794 0.010941652857 0.490045652857 37 0.008865334256 0.372889365958 7.294340335896 1.8355153049674
+17	60462 985 86 3794 0.010941652857 0.490045652857 37 0 56 1054 39398
+18	61447 3800 90 3846 0.011399208424 0.498599208424 148 0 2 148 222
+19	65247 526 155 3852 0.01981654268 0.49860054268 19 1008 1008 19152 19305216
+20	65773 479 155 3852 0.01981654268 0.49860054268 19 1 19 190 2470
+21	66252 526 156 3853 0.01981654268 0.49860054268 19 1000 1000 19000 19000000
+22	66778 715 156 3853 0.01981654268 0.49860054268 19 0.014591986029 0.384409883532 3.793007221262 1.0407007930472
+23	67493 483 156 3853 0.01981654268 0.49860054268 19 1 59 572 24140
+24	67976 79 774 3091 0.1 0.4 4 400000 800000 2320000 1478400000000
+25	68055 79 948 3292 0.1 0.4 4 160000 480000 1200000 441600000000
+

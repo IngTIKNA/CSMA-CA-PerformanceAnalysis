@@ -1,0 +1,213 @@
+file 66204 1526626749                                           
+version 2
+run TwoHostIntegratedInCSMA-0-20180518-09:57:20-12784
+attr configname TwoHostIntegratedInCSMA
+attr datetime 20180518-09:57:20
+attr experiment TwoHostIntegratedInCSMA
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network WirelessA3
+attr processid 12784
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param WirelessA3.hostC.numUdpApps 1
+param WirelessA3.hostC.udpApp[0].typename "\"UDPBasicApp\""
+param WirelessA3.hostC.udpApp[0].destAddresses "\"hostD\""
+param WirelessA3.hostC.udpApp[0].destPort 5000
+param WirelessA3.hostC.udpApp[0].messageLength 1000B
+param WirelessA3.hostC.udpApp[0].sendInterval exponential(2ms)
+param WirelessA3.hostC.udpApp[0].packetName "\"UDPData\""
+param *.hostD.numUdpApps 1
+param *.hostD.udpApp[0].typename "\"UDPSink\""
+param *.hostD.udpApp[0].localPort 5000
+param *.hostC.wlan[0].typename "\"WirelessNic\""
+param *.host*.wlan[0].radioType "\"IdealRadio\""
+param *.hostC.wlan[0].macType "\"CsmaCaMac\""
+param *.hostC.wlan[0].mac.useAck false
+param *.hostC.wlan[0].radio.transmitter.communicationRange 500m
+param *.hostD.wlan[0].typename "\"WirelessNic\""
+param *.hostD.wlan[0].macType "\"CsmaCaMac\""
+param *.hostD.wlan[0].mac.useAck false
+param *.hostD.wlan[0].radio.transmitter.communicationRange 500m
+param *.hostA.wlan[0].radio.receiver.ignoreInterference false
+param *.hostB.wlan[0].radio.receiver.ignoreInterference false
+param *.hostC.wlan[0].radio.receiver.ignoreInterference false
+param *.hostD.wlan[0].radio.receiver.ignoreInterference false
+param *.host*.wlan[0].radio.transmitter.interferenceRange 500m
+param WirelessA2.hostC.**.bitrate 1Mbps
+param WirelessA2.hostD.**.bitrate 1Mbps
+param *.hostC.wlan[0].radio.displayCommunicationRange true
+param *.hostA.wlan[0].mac.useAck false
+param *.hostB.wlan[0].mac.useAck false
+param *.host*.wlan[0].typename "\"WirelessNic\""
+param *.host*.wlan[0].radioType "\"IdealRadio\""
+param *.hostA.wlan[0].macType "\"CsmaCaMac\""
+param *.hostB.wlan[0].macType "\"CsmaCaMac\""
+param *.visualizer.physicalLinkVisualizer.displayLinks true
+param *.visualizer.dataLinkVisualizer.displayLinks true
+param *.visualizer.networkRouteVisualizer.displayRoutes true
+param *.visualizer.*LinkVisualizer.lineShift 0
+param *.visualizer.networkRouteVisualizer.lineShift 0
+param *.visualizer.networkRouteVisualizer.packetFilter "\"UDPData*\""
+param *.host*.wlan[0].radio.receiver.ignoreInterference false
+param *.host*.wlan[0].radio.transmitter.interferenceRange 500m
+param *.hostA.wlan[0].radio.displayInterferenceRange true
+param *.visualizer.dataLinkVisualizer.packetFilter "\"\""
+param *.hostA.wlan[0].radio.displayCommunicationRange true
+param *.visualizer.sceneVisualizer.descriptionFigure "\"title\""
+param *.visualizer.mediumVisualizer.displaySignals true
+param *.visualizer.physicalLinkVisualizer.displayLinks true
+param *.visualizer.physicalLinkVisualizer.packetFilter "\"UDPData*\""
+param *.host*.networkLayer.arpType "\"GlobalARP\""
+param *.hostA.numUdpApps 1
+param *.hostA.udpApp[0].typename "\"UDPBasicApp\""
+param *.hostA.udpApp[0].destAddresses "\"hostB\""
+param *.hostA.udpApp[0].destPort 5000
+param *.hostA.udpApp[0].messageLength 1000B
+param *.hostA.udpApp[0].sendInterval exponential(2ms)
+param *.hostA.udpApp[0].packetName "\"UDPData\""
+param *.hostB.numUdpApps 1
+param *.hostB.udpApp[0].typename "\"UDPSink\""
+param *.hostB.udpApp[0].localPort 5000
+param *.host*.wlan[0].typename "\"IdealWirelessNic\""
+param *.host*.wlan[0].mac.useAck false
+param *.host*.wlan[0].mac.fullDuplex false
+param *.host*.wlan[0].radio.transmitter.communicationRange 500m
+param *.host*.wlan[0].radio.receiver.ignoreInterference true
+param *.host*.**.bitrate 1Mbps
+
+vector 0 WirelessA3.hostA.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+0	8139 1528 0 2937 0 0.493213341437 63 0 3 155 403
+vector 1 WirelessA3.hostB.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+1	9667 18 0 0 0 0 2 0 2 2 4
+vector 2 WirelessA3.hostC.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+2	9685 1441 0 2927 0 0.492972340745 60 0 3 147 381
+vector 3 WirelessA3.hostD.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+3	11126 18 0 0 0 0 2 0 2 2 4
+vector 4 WirelessA3.hostA.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+4	11144 2894 0 2937 0 0.493213341437 118 0 3 144 314
+vector 5 WirelessA3.hostB.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+5	14038 2918 0 2940 0 0.493214675693 119 1 3 239 597
+vector 6 WirelessA3.hostC.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+6	16956 2918 0 2939 0 0.493214342129 119 0 3 151 333
+vector 7 WirelessA3.hostD.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+7	19874 2918 0 2941 0 0.493215009257 119 1 3 239 597
+vector 8 WirelessA3.hostC.udpApp[0] sentPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, vector(packetBytes)"
+8	22792 6771 19 2995 0.002076318601 0.499550569872 246 1000 1000 246000 246000000
+vector 9 WirelessA3.hostC.udp sentPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, vector(packetBytes)"
+9	29563 6772 21 2996 0.002076318601 0.499550569872 246 1008 1008 247968 249951744
+vector 10 WirelessA3.hostC.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+10	36335 2962 28 2927 0.002556318601 0.492972340745 116 0 2 116 174
+vector 11 WirelessA3.hostA.udpApp[0] sentPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, vector(packetBytes)"
+11	39297 7566 37 2999 0.003719208424 0.499638545091 265 1000 1000 265000 265000000
+vector 12 WirelessA3.hostA.udp sentPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, vector(packetBytes)"
+12	46863 7566 39 3000 0.003719208424 0.499638545091 265 1008 1008 267120 269256960
+vector 13 WirelessA3.hostD.udp rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, vector(packetBytes)"
+13	54429 800 72 2933 0.010845652857 0.492973675001 28 1008 1008 28224 28449792
+vector 14 WirelessA3.hostD.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr title "packets passed up, vector(count)"
+14	55229 735 72 2933 0.010845652857 0.492973675001 28 1 28 406 7714
+vector 15 WirelessA3.hostD.udpApp[0] rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, vector(packetBytes)"
+15	55964 800 73 2934 0.010845652857 0.492973675001 28 1000 1000 28000 28000000
+vector 16 WirelessA3.hostD.udpApp[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source messageAge(rcvdPk)
+attr title "end-to-end delay, vector"
+attr unit s
+16	56764 1078 73 2934 0.010845652857 0.492973675001 28 0.008769334256 0.445913715226 6.16167750724 1.9488777731924
+vector 17 WirelessA3.hostD.udpApp[0] rcvdPkSeqNo:vector ETV
+attr interpolationmode none
+attr source appPkSeqNo(rcvdPk)
+attr title "received packet sequence number, vector"
+17	57842 735 73 2934 0.010845652857 0.492973675001 28 0 28 403 7705
+vector 18 WirelessA3.hostA.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+18	58577 3142 115 2938 0.019513319293 0.493213341437 122 0 2 123 185
+vector 19 WirelessA3.hostB.udp rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, vector(packetBytes)"
+19	61719 835 155 2901 0.027802653549 0.484604674309 29 1008 1008 29232 29465856
+vector 20 WirelessA3.hostB.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr title "packets passed up, vector(count)"
+20	62554 768 155 2901 0.027802653549 0.484604674309 29 1 29 435 8555
+vector 21 WirelessA3.hostB.udpApp[0] rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, vector(packetBytes)"
+21	63322 835 156 2902 0.027802653549 0.484604674309 29 1000 1000 29000 29000000
+vector 22 WirelessA3.hostB.udpApp[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source messageAge(rcvdPk)
+attr title "end-to-end delay, vector"
+attr unit s
+22	64157 1119 156 2902 0.027802653549 0.484604674309 29 0.024083445125 0.417470526162 6.543554905197 1.7687879922268
+vector 23 WirelessA3.hostB.udpApp[0] rcvdPkSeqNo:vector ETV
+attr interpolationmode none
+attr source appPkSeqNo(rcvdPk)
+attr title "received packet sequence number, vector"
+23	65276 768 156 2902 0.027802653549 0.484604674309 29 0 29 434 8554
+vector 24 WirelessA3.hostD.udpApp[0] throughput:vector ETV
+attr source throughput(rcvdPk)
+attr title "throughput, vector"
+attr unit bps
+24	66044 79 650 2478 0.1 0.4 4 240000 640000 1680000 800000000000
+vector 25 WirelessA3.hostB.udpApp[0] throughput:vector ETV
+attr source throughput(rcvdPk)
+attr title "throughput, vector"
+attr unit bps
+25	66123 81 718 2446 0.1 0.4 4 160000 720000 1920000 1113600000000

@@ -1,0 +1,1039 @@
+version 2
+run TwoHostIntegratedInCSMA-0-20180518-06:44:00-4788
+attr configname TwoHostIntegratedInCSMA
+attr datetime 20180518-06:44:00
+attr experiment TwoHostIntegratedInCSMA
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network WirelessA2
+attr processid 4788
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param WirelessA2.hostC.numUdpApps 1
+param WirelessA2.hostC.udpApp[0].typename "\"UDPBasicApp\""
+param WirelessA2.hostC.udpApp[0].destAddresses "\"hostB\""
+param WirelessA2.hostC.udpApp[0].destPort 5000
+param WirelessA2.hostC.udpApp[0].messageLength 1000B
+param WirelessA2.hostC.udpApp[0].sendInterval exponential(5ms)
+param WirelessA2.hostC.udpApp[0].packetName "\"UDPData\""
+param WirelessA2.hostD.numUdpApps 1
+param WirelessA2.hostD.udpApp[0].typename "\"UDPBasicApp\""
+param WirelessA2.hostD.udpApp[0].destAddresses "\"hostB\""
+param WirelessA2.hostD.udpApp[0].destPort 5000
+param WirelessA2.hostD.udpApp[0].messageLength 1000B
+param WirelessA2.hostD.udpApp[0].sendInterval exponential(5ms)
+param WirelessA2.hostD.udpApp[0].packetName "\"UDPData\""
+param *.hostC.wlan[0].typename "\"WirelessNic\""
+param *.hostC.wlan[0].macType "\"CSMA\""
+param *.hostC.wlan[0].mac.useMACAcks false
+param *.hostC.wlan[0].radio.transmitter.communicationRange 500m
+param *.hostD.wlan[0].typename "\"WirelessNic\""
+param *.hostD.wlan[0].macType "\"CSMA\""
+param *.hostD.wlan[0].mac.useMACAcks false
+param *.hostD.wlan[0].radio.transmitter.communicationRange 500m
+param *.hostA.wlan[0].radio.receiver.ignoreInterference false
+param *.hostB.wlan[0].radio.receiver.ignoreInterference false
+param *.hostC.wlan[0].radio.receiver.ignoreInterference false
+param *.hostD.wlan[0].radio.receiver.ignoreInterference false
+param *.host*.wlan[0].radio.transmitter.interferenceRange 500m
+param WirelessA2.hostC.**.bitrate 1Mbps
+param WirelessA2.hostD.**.bitrate 1Mbps
+param *.hostD.wlan[0].radio.displayCommunicationRange true
+param *.hostC.wlan[0].radio.displayCommunicationRange true
+param *.hostA.wlan[0].mac.useMACAcks false
+param *.hostB.wlan[0].mac.useMACAcks false
+param *.host*.wlan[0].typename "\"WirelessNic\""
+param *.host*.wlan[0].radioType "\"IdealRadio\""
+param *.hostA.wlan[0].macType "\"CSMA\""
+param *.hostB.wlan[0].macType "\"CSMA\""
+param *.visualizer.physicalLinkVisualizer.displayLinks true
+param *.visualizer.dataLinkVisualizer.displayLinks true
+param *.visualizer.networkRouteVisualizer.displayRoutes true
+param *.visualizer.*LinkVisualizer.lineShift 0
+param *.visualizer.networkRouteVisualizer.lineShift 0
+param *.visualizer.networkRouteVisualizer.packetFilter "\"UDPData*\""
+param *.host*.wlan[0].radio.receiver.ignoreInterference false
+param *.host*.wlan[0].radio.transmitter.interferenceRange 500m
+param *.hostA.wlan[0].radio.displayInterferenceRange true
+param *.visualizer.dataLinkVisualizer.packetFilter "\"\""
+param *.hostA.wlan[0].radio.displayCommunicationRange true
+param *.visualizer.sceneVisualizer.descriptionFigure "\"title\""
+param *.visualizer.mediumVisualizer.displaySignals true
+param *.visualizer.physicalLinkVisualizer.displayLinks true
+param *.visualizer.physicalLinkVisualizer.packetFilter "\"UDPData*\""
+param *.host*.networkLayer.arpType "\"GlobalARP\""
+param *.hostA.numUdpApps 1
+param *.hostA.udpApp[0].typename "\"UDPBasicApp\""
+param *.hostA.udpApp[0].destAddresses "\"hostB\""
+param *.hostA.udpApp[0].destPort 5000
+param *.hostA.udpApp[0].messageLength 1000B
+param *.hostA.udpApp[0].sendInterval exponential(5ms)
+param *.hostA.udpApp[0].packetName "\"UDPData\""
+param *.hostB.numUdpApps 1
+param *.hostB.udpApp[0].typename "\"UDPSink\""
+param *.hostB.udpApp[0].localPort 5000
+param *.host*.wlan[0].typename "\"IdealWirelessNic\""
+param *.host*.wlan[0].mac.useAck false
+param *.host*.wlan[0].mac.fullDuplex false
+param *.host*.wlan[0].radio.transmitter.communicationRange 500m
+param *.host*.wlan[0].radio.receiver.ignoreInterference true
+param *.host*.**.bitrate 1Mbps
+
+scalar WirelessA2.radioMedium.propagation "Arrival computation count" 354
+scalar WirelessA2.radioMedium "transmission count" 118
+scalar WirelessA2.radioMedium "radio frame send count" 354
+scalar WirelessA2.radioMedium "reception computation count" 354
+scalar WirelessA2.radioMedium "interference computation count" 691
+scalar WirelessA2.radioMedium "reception decision computation count" 100
+scalar WirelessA2.radioMedium "listening decision computation count" 359
+scalar WirelessA2.radioMedium "reception cache hit" 79.608294930876
+attr unit %
+scalar WirelessA2.radioMedium "interference cache hit" 66.666666666667
+attr unit %
+scalar WirelessA2.radioMedium "noise cache hit" 0
+attr unit %
+scalar WirelessA2.radioMedium "snir cache hit" 50
+attr unit %
+scalar WirelessA2.radioMedium "reception decision cache hit" 50
+attr unit %
+scalar WirelessA2.radioMedium "reception result cache hit" 0
+attr unit %
+scalar WirelessA2.hostA.lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar WirelessA2.hostA.lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar WirelessA2.hostA.lo0.lo rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar WirelessA2.hostA.lo0.lo rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar WirelessA2.hostA.lo0.lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar WirelessA2.hostA.lo0.lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar WirelessA2.hostA.wlan[0].mac nbTxFrames 18
+scalar WirelessA2.hostA.wlan[0].mac nbRxFrames 0
+scalar WirelessA2.hostA.wlan[0].mac nbDroppedFrames 50
+scalar WirelessA2.hostA.wlan[0].mac nbMissedAcks 0
+scalar WirelessA2.hostA.wlan[0].mac nbRecvdAcks 0
+scalar WirelessA2.hostA.wlan[0].mac nbTxAcks 0
+scalar WirelessA2.hostA.wlan[0].mac nbDuplicates 0
+scalar WirelessA2.hostA.wlan[0].mac meanBackoff 0.00087928783382789
+scalar WirelessA2.hostA.wlan[0].mac nbBackoffs 337
+scalar WirelessA2.hostA.wlan[0].mac backoffDurations 0.29632
+statistic WirelessA2.hostA.wlan[0].radio symbolErrorRate:histogram
+field count 36
+field mean 1
+field stddev 0
+field min 1
+field max 1
+field sum 36
+field sqrsum 36
+attr source symbolErrorRate
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	36
+bin	2	0
+statistic WirelessA2.hostA.wlan[0].radio bitErrorRate:histogram
+field count 36
+field mean 1
+field stddev 0
+field min 1
+field max 1
+field sum 36
+field sqrsum 36
+attr source bitErrorRate
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	36
+bin	2	0
+statistic WirelessA2.hostA.wlan[0].radio packetErrorRate:histogram
+field count 36
+field mean 1
+field stddev 0
+field min 1
+field max 1
+field sum 36
+field sqrsum 36
+attr source packetErrorRate
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	36
+bin	2	0
+statistic WirelessA2.hostA.wlan[0].radio minSNIR:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source minSNIR
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar WirelessA2.hostA.wlan[0].radio transmissionState:count 72
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+scalar WirelessA2.hostA.wlan[0].radio receptionState:count 142
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar WirelessA2.hostA.wlan[0].radio radioMode:count 38
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar WirelessA2.hostA.udpApp[0] "packets sent" 108
+scalar WirelessA2.hostA.udpApp[0] "packets received" 0
+scalar WirelessA2.hostA.udpApp[0] sentPk:count 108
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, count"
+scalar WirelessA2.hostA.udpApp[0] sentPk:sum(packetBytes) 108000
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, sum(packetBytes)"
+scalar WirelessA2.hostA.udpApp[0] rcvdPk:count 0
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, count"
+scalar WirelessA2.hostA.udpApp[0] rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, sum(packetBytes)"
+statistic WirelessA2.hostA.udpApp[0] rcvdPkLifetime:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source messageAge(rcvdPk)
+attr title "received packet lifetime, stats"
+attr unit s
+scalar WirelessA2.hostA.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr title "packets dropped (checksum error), count"
+scalar WirelessA2.hostA.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr title "packets dropped (wrong port), count"
+scalar WirelessA2.hostA.udp passedUpPk:count 0
+attr interpolationmode none
+attr title "packets passed up, count"
+scalar WirelessA2.hostA.udp sentPk:count 108
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, count"
+scalar WirelessA2.hostA.udp sentPk:sum(packetBytes) 108864
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, sum(packetBytes)"
+scalar WirelessA2.hostA.udp rcvdPk:count 0
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, count"
+scalar WirelessA2.hostA.udp rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, sum(packetBytes)"
+scalar WirelessA2.hostB.lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar WirelessA2.hostB.lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar WirelessA2.hostB.lo0.lo rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar WirelessA2.hostB.lo0.lo rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar WirelessA2.hostB.lo0.lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar WirelessA2.hostB.lo0.lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar WirelessA2.hostB.wlan[0].mac nbTxFrames 0
+scalar WirelessA2.hostB.wlan[0].mac nbRxFrames 2
+scalar WirelessA2.hostB.wlan[0].mac nbDroppedFrames 0
+scalar WirelessA2.hostB.wlan[0].mac nbMissedAcks 0
+scalar WirelessA2.hostB.wlan[0].mac nbRecvdAcks 0
+scalar WirelessA2.hostB.wlan[0].mac nbTxAcks 0
+scalar WirelessA2.hostB.wlan[0].mac nbDuplicates 0
+scalar WirelessA2.hostB.wlan[0].mac meanBackoff 0
+scalar WirelessA2.hostB.wlan[0].mac nbBackoffs 0
+scalar WirelessA2.hostB.wlan[0].mac backoffDurations 0
+statistic WirelessA2.hostB.wlan[0].radio symbolErrorRate:histogram
+field count 54
+field mean 0.96296296296296
+field stddev 0.19062587709299
+field min 0
+field max 1
+field sum 52
+field sqrsum 52
+attr source symbolErrorRate
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	-1	0
+bin	0	2
+bin	1	52
+bin	2	0
+statistic WirelessA2.hostB.wlan[0].radio bitErrorRate:histogram
+field count 54
+field mean 0.96296296296296
+field stddev 0.19062587709299
+field min 0
+field max 1
+field sum 52
+field sqrsum 52
+attr source bitErrorRate
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	-1	0
+bin	0	2
+bin	1	52
+bin	2	0
+statistic WirelessA2.hostB.wlan[0].radio packetErrorRate:histogram
+field count 54
+field mean 0.96296296296296
+field stddev 0.19062587709299
+field min 0
+field max 1
+field sum 52
+field sqrsum 52
+attr source packetErrorRate
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-1	0
+bin	0	2
+bin	1	52
+bin	2	0
+statistic WirelessA2.hostB.wlan[0].radio minSNIR:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source minSNIR
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar WirelessA2.hostB.wlan[0].radio transmissionState:count 0
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+scalar WirelessA2.hostB.wlan[0].radio receptionState:count 146
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar WirelessA2.hostB.wlan[0].radio radioMode:count 2
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar WirelessA2.hostB.udpApp[0] rcvdPk:count 2
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, count"
+scalar WirelessA2.hostB.udpApp[0] rcvdPk:sum(packetBytes) 2000
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, sum(packetBytes)"
+statistic WirelessA2.hostB.udpApp[0] endToEndDelay:histogram
+field count 2
+field mean 0.0848859320005
+field stddev 0.099871861012275
+field min 0.014265861829
+field max 0.155506002172
+field sum 0.169771864001
+field sqrsum 0.024385631525242
+attr interpolationmode none
+attr source messageAge(rcvdPk)
+attr title "end-to-end delay, histogram"
+attr unit s
+bin	-inf	0
+bin	-0.0563542083425	0
+bin	-0.0469381989863	0
+bin	-0.0375221896301	0
+bin	-0.0281061802739	0
+bin	-0.0186901709177	0
+bin	-0.0092741615615	0
+bin	0.00014184779469999	0
+bin	0.0095578571509	1
+bin	0.0189738665071	0
+bin	0.0283898758633	0
+bin	0.0378058852195	0
+bin	0.0472218945757	0
+bin	0.0566379039319	0
+bin	0.0660539132881	0
+bin	0.0754699226443	0
+bin	0.0848859320005	0
+bin	0.0943019413567	0
+bin	0.1037179507129	0
+bin	0.1131339600691	0
+bin	0.1225499694253	0
+bin	0.1319659787815	0
+bin	0.1413819881377	0
+bin	0.1507979974939	1
+bin	0.1602140068501	0
+bin	0.1696300162063	0
+bin	0.1790460255625	0
+bin	0.1884620349187	0
+bin	0.1978780442749	0
+bin	0.2072940536311	0
+bin	0.2167100629873	0
+bin	0.2261260723435	0
+scalar WirelessA2.hostB.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr title "packets dropped (checksum error), count"
+scalar WirelessA2.hostB.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr title "packets dropped (wrong port), count"
+scalar WirelessA2.hostB.udp passedUpPk:count 2
+attr interpolationmode none
+attr title "packets passed up, count"
+scalar WirelessA2.hostB.udp sentPk:count 0
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, count"
+scalar WirelessA2.hostB.udp sentPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, sum(packetBytes)"
+scalar WirelessA2.hostB.udp rcvdPk:count 2
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, count"
+scalar WirelessA2.hostB.udp rcvdPk:sum(packetBytes) 2016
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, sum(packetBytes)"
+scalar WirelessA2.hostC.lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar WirelessA2.hostC.lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar WirelessA2.hostC.lo0.lo rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar WirelessA2.hostC.lo0.lo rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar WirelessA2.hostC.lo0.lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar WirelessA2.hostC.lo0.lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar WirelessA2.hostC.wlan[0].mac nbTxFrames 49
+scalar WirelessA2.hostC.wlan[0].mac nbRxFrames 0
+scalar WirelessA2.hostC.wlan[0].mac nbDroppedFrames 6
+scalar WirelessA2.hostC.wlan[0].mac nbMissedAcks 0
+scalar WirelessA2.hostC.wlan[0].mac nbRecvdAcks 0
+scalar WirelessA2.hostC.wlan[0].mac nbTxAcks 0
+scalar WirelessA2.hostC.wlan[0].mac nbDuplicates 0
+scalar WirelessA2.hostC.wlan[0].mac meanBackoff 0.00071333333333333
+scalar WirelessA2.hostC.wlan[0].mac nbBackoffs 96
+scalar WirelessA2.hostC.wlan[0].mac backoffDurations 0.06848
+statistic WirelessA2.hostC.wlan[0].radio symbolErrorRate:histogram
+field count 6
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	6
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+statistic WirelessA2.hostC.wlan[0].radio bitErrorRate:histogram
+field count 6
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source bitErrorRate
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	6
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+statistic WirelessA2.hostC.wlan[0].radio packetErrorRate:histogram
+field count 6
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	6
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+statistic WirelessA2.hostC.wlan[0].radio minSNIR:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source minSNIR
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar WirelessA2.hostC.wlan[0].radio transmissionState:count 194
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+scalar WirelessA2.hostC.wlan[0].radio receptionState:count 116
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar WirelessA2.hostC.wlan[0].radio radioMode:count 99
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar WirelessA2.hostC.udpApp[0] "packets sent" 101
+scalar WirelessA2.hostC.udpApp[0] "packets received" 0
+scalar WirelessA2.hostC.udpApp[0] sentPk:count 101
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, count"
+scalar WirelessA2.hostC.udpApp[0] sentPk:sum(packetBytes) 101000
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, sum(packetBytes)"
+scalar WirelessA2.hostC.udpApp[0] rcvdPk:count 0
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, count"
+scalar WirelessA2.hostC.udpApp[0] rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, sum(packetBytes)"
+statistic WirelessA2.hostC.udpApp[0] rcvdPkLifetime:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source messageAge(rcvdPk)
+attr title "received packet lifetime, stats"
+attr unit s
+scalar WirelessA2.hostC.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr title "packets dropped (checksum error), count"
+scalar WirelessA2.hostC.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr title "packets dropped (wrong port), count"
+scalar WirelessA2.hostC.udp passedUpPk:count 0
+attr interpolationmode none
+attr title "packets passed up, count"
+scalar WirelessA2.hostC.udp sentPk:count 101
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, count"
+scalar WirelessA2.hostC.udp sentPk:sum(packetBytes) 101808
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, sum(packetBytes)"
+scalar WirelessA2.hostC.udp rcvdPk:count 0
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, count"
+scalar WirelessA2.hostC.udp rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, sum(packetBytes)"
+scalar WirelessA2.hostD.lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar WirelessA2.hostD.lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar WirelessA2.hostD.lo0.lo rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar WirelessA2.hostD.lo0.lo rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar WirelessA2.hostD.lo0.lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar WirelessA2.hostD.lo0.lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar WirelessA2.hostD.wlan[0].mac nbTxFrames 51
+scalar WirelessA2.hostD.wlan[0].mac nbRxFrames 0
+scalar WirelessA2.hostD.wlan[0].mac nbDroppedFrames 4
+scalar WirelessA2.hostD.wlan[0].mac nbMissedAcks 0
+scalar WirelessA2.hostD.wlan[0].mac nbRecvdAcks 0
+scalar WirelessA2.hostD.wlan[0].mac nbTxAcks 0
+scalar WirelessA2.hostD.wlan[0].mac nbDuplicates 0
+scalar WirelessA2.hostD.wlan[0].mac meanBackoff 0.00061268292682927
+scalar WirelessA2.hostD.wlan[0].mac nbBackoffs 82
+scalar WirelessA2.hostD.wlan[0].mac backoffDurations 0.05024
+statistic WirelessA2.hostD.wlan[0].radio symbolErrorRate:histogram
+field count 4
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	4
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+statistic WirelessA2.hostD.wlan[0].radio bitErrorRate:histogram
+field count 4
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source bitErrorRate
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	4
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+statistic WirelessA2.hostD.wlan[0].radio packetErrorRate:histogram
+field count 4
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	4
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+statistic WirelessA2.hostD.wlan[0].radio minSNIR:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source minSNIR
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar WirelessA2.hostD.wlan[0].radio transmissionState:count 202
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+scalar WirelessA2.hostD.wlan[0].radio receptionState:count 114
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar WirelessA2.hostD.wlan[0].radio radioMode:count 103
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar WirelessA2.hostD.udpApp[0] "packets sent" 100
+scalar WirelessA2.hostD.udpApp[0] "packets received" 0
+scalar WirelessA2.hostD.udpApp[0] sentPk:count 100
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, count"
+scalar WirelessA2.hostD.udpApp[0] sentPk:sum(packetBytes) 100000
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, sum(packetBytes)"
+scalar WirelessA2.hostD.udpApp[0] rcvdPk:count 0
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, count"
+scalar WirelessA2.hostD.udpApp[0] rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, sum(packetBytes)"
+statistic WirelessA2.hostD.udpApp[0] rcvdPkLifetime:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source messageAge(rcvdPk)
+attr title "received packet lifetime, stats"
+attr unit s
+scalar WirelessA2.hostD.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr title "packets dropped (checksum error), count"
+scalar WirelessA2.hostD.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr title "packets dropped (wrong port), count"
+scalar WirelessA2.hostD.udp passedUpPk:count 0
+attr interpolationmode none
+attr title "packets passed up, count"
+scalar WirelessA2.hostD.udp sentPk:count 100
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, count"
+scalar WirelessA2.hostD.udp sentPk:sum(packetBytes) 100800
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, sum(packetBytes)"
+scalar WirelessA2.hostD.udp rcvdPk:count 0
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, count"
+scalar WirelessA2.hostD.udp rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, sum(packetBytes)"
+

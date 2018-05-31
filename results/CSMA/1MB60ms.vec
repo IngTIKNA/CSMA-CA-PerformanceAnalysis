@@ -1,0 +1,534 @@
+version 2
+run TwoHostIntegratedInCSMA-0-20180514-11:24:44-12620
+attr configname TwoHostIntegratedInCSMA
+attr datetime 20180514-11:24:44
+attr experiment TwoHostIntegratedInCSMA
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network WirelessA2
+attr processid 12620
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param WirelessA2.hostPU1.numUdpApps 1
+param WirelessA2.hostPU1.udpApp[0].typename "\"UDPBasicApp\""
+param WirelessA2.hostPU1.udpApp[0].destAddresses "\"hostPU2\""
+param WirelessA2.hostPU1.udpApp[0].destPort 5000
+param WirelessA2.hostPU1.udpApp[0].messageLength 1000B
+param WirelessA2.hostPU1.udpApp[0].sendInterval exponential(60ms)
+param WirelessA2.hostPU1.udpApp[0].packetName "\"UDPData\""
+param WirelessA2.hostPU2.numUdpApps 1
+param WirelessA2.hostPU2.udpApp[0].typename "\"UDPSink\""
+param WirelessA2.hostPU2.udpApp[0].localPort 5000
+param *.hostPU1.wlan[0].typename "\"WirelessNic\""
+param *.hostPU1.wlan[0].macType "\"CSMA\""
+param *.hostPU1.wlan[0].mac.useMACAcks false
+param *.hostPU1.wlan[0].radio.transmitter.communicationRange 500m
+param *.hostPU2.wlan[0].typename "\"WirelessNic\""
+param *.hostPU2.wlan[0].macType "\"CSMA\""
+param *.hostPU2.wlan[0].mac.useMACAcks false
+param *.hostPU2.wlan[0].radio.transmitter.communicationRange 500m
+param *.hostA.wlan[0].radio.receiver.ignoreInterference false
+param *.hostB.wlan[0].radio.receiver.ignoreInterference false
+param *.hostPU1.wlan[0].radio.receiver.ignoreInterference false
+param *.hostPU2.wlan[0].radio.receiver.ignoreInterference false
+param *.host*.wlan[0].radio.transmitter.interferenceRange 500m
+param WirelessA2.hostPU1.**.bitrate 1Mbps
+param WirelessA2.hostPU2.**.bitrate 1Mbps
+param *.hostPU1.wlan[0].radio.displayCommunicationRange true
+param *.hostA.wlan[0].mac.useMACAcks false
+param *.hostB.wlan[0].mac.useMACAcks false
+param *.host*.wlan[0].typename "\"WirelessNic\""
+param *.host*.wlan[0].radioType "\"IdealRadio\""
+param *.hostA.wlan[0].macType "\"CSMA\""
+param *.hostB.wlan[0].macType "\"CSMA\""
+param *.visualizer.physicalLinkVisualizer.displayLinks true
+param *.visualizer.dataLinkVisualizer.displayLinks true
+param *.visualizer.networkRouteVisualizer.displayRoutes true
+param *.visualizer.*LinkVisualizer.lineShift 0
+param *.visualizer.networkRouteVisualizer.lineShift 0
+param *.visualizer.networkRouteVisualizer.packetFilter "\"UDPData*\""
+param *.host*.wlan[0].radio.receiver.ignoreInterference false
+param *.host*.wlan[0].radio.transmitter.interferenceRange 500m
+param *.hostA.wlan[0].radio.displayInterferenceRange true
+param *.visualizer.dataLinkVisualizer.packetFilter "\"\""
+param *.hostA.wlan[0].radio.displayCommunicationRange true
+param *.visualizer.sceneVisualizer.descriptionFigure "\"title\""
+param *.visualizer.mediumVisualizer.displaySignals true
+param *.visualizer.physicalLinkVisualizer.displayLinks true
+param *.visualizer.physicalLinkVisualizer.packetFilter "\"UDPData*\""
+param *.host*.networkLayer.arpType "\"GlobalARP\""
+param *.hostA.numUdpApps 1
+param *.hostA.udpApp[0].typename "\"UDPBasicApp\""
+param *.hostA.udpApp[0].destAddresses "\"hostB\""
+param *.hostA.udpApp[0].destPort 5000
+param *.hostA.udpApp[0].messageLength 1000B
+param *.hostA.udpApp[0].sendInterval exponential(60ms)
+param *.hostA.udpApp[0].packetName "\"UDPData\""
+param *.hostB.numUdpApps 1
+param *.hostB.udpApp[0].typename "\"UDPSink\""
+param *.hostB.udpApp[0].localPort 5000
+param *.host*.wlan[0].typename "\"IdealWirelessNic\""
+param *.host*.wlan[0].mac.useAck false
+param *.host*.wlan[0].mac.fullDuplex false
+param *.host*.wlan[0].radio.transmitter.communicationRange 500m
+param *.host*.wlan[0].radio.receiver.ignoreInterference true
+param *.host*.**.bitrate 1Mbps
+
+vector 0 WirelessA2.hostA.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 1 WirelessA2.hostB.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 2 WirelessA2.hostPU1.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 3 WirelessA2.hostPU2.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 4 WirelessA2.hostA.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 5 WirelessA2.hostB.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 6 WirelessA2.hostPU1.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 7 WirelessA2.hostPU2.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 8 WirelessA2.hostPU1.udpApp[0] sentPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, vector(packetBytes)"
+vector 9 WirelessA2.hostPU1.udp sentPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, vector(packetBytes)"
+vector 10 WirelessA2.hostPU1.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 11 WirelessA2.hostPU2.udp rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, vector(packetBytes)"
+vector 12 WirelessA2.hostPU2.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr title "packets passed up, vector(count)"
+vector 13 WirelessA2.hostPU2.udpApp[0] rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, vector(packetBytes)"
+vector 14 WirelessA2.hostPU2.udpApp[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source messageAge(rcvdPk)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 15 WirelessA2.hostPU2.udpApp[0] rcvdPkSeqNo:vector ETV
+attr interpolationmode none
+attr source appPkSeqNo(rcvdPk)
+attr title "received packet sequence number, vector"
+vector 16 WirelessA2.hostPU2.udpApp[0] throughput:vector ETV
+attr source throughput(rcvdPk)
+attr title "throughput, vector"
+attr unit bps
+vector 17 WirelessA2.hostA.udpApp[0] sentPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, vector(packetBytes)"
+vector 18 WirelessA2.hostA.udp sentPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, vector(packetBytes)"
+vector 19 WirelessA2.hostA.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 20 WirelessA2.hostB.udp rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, vector(packetBytes)"
+vector 21 WirelessA2.hostB.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr title "packets passed up, vector(count)"
+vector 22 WirelessA2.hostB.udpApp[0] rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, vector(packetBytes)"
+vector 23 WirelessA2.hostB.udpApp[0] throughput:vector ETV
+attr source throughput(rcvdPk)
+attr title "throughput, vector"
+attr unit bps
+vector 24 WirelessA2.hostB.udpApp[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source messageAge(rcvdPk)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 25 WirelessA2.hostB.udpApp[0] rcvdPkSeqNo:vector ETV
+attr interpolationmode none
+attr source appPkSeqNo(rcvdPk)
+attr title "received packet sequence number, vector"
+0	0	0	0
+0	0	0	2
+0	86	0.112344252724	3
+0	92	0.120760252724	2
+0	107	0.162710223898	3
+0	112	0.171126223898	2
+0	190	0.270892379754	3
+0	195	0.279308379754	2
+0	231	0.393665912709	3
+0	236	0.402081912709	2
+0	292	0.43744377798	3
+0	298	0.44585977798	2
+1	0	0	0
+1	0	0	2
+2	0	0	0
+2	0	0	2
+2	23	0.06273755804	3
+2	32	0.07115355804	2
+2	43	0.07192155804	3
+2	48	0.08033755804	2
+2	65	0.095576764483	3
+2	70	0.103992764483	2
+2	127	0.195589436502	3
+2	136	0.204005436502	2
+2	147	0.204773436502	3
+2	152	0.213189436502	2
+2	169	0.228933986304	3
+2	174	0.237349986304	2
+2	210	0.319281041822	3
+2	215	0.327697041822	2
+2	251	0.415595415246	3
+2	260	0.424011415246	2
+2	271	0.424779415246	3
+2	276	0.433195415246	2
+2	313	0.475167151515	3
+2	322	0.483583151515	2
+2	333	0.484031151515	3
+2	338	0.492447151515	2
+3	0	0	0
+3	0	0	2
+4	0	0	1
+4	25	0.062930225168	3
+4	33	0.071154225168	1
+4	45	0.072114225168	3
+4	49	0.080338225168	1
+4	67	0.095769431611	3
+4	71	0.103993431611	1
+4	86	0.112344252724	0
+4	92	0.120760252724	1
+4	107	0.162710223898	0
+4	112	0.171126223898	1
+4	129	0.19578210363	3
+4	137	0.20400610363	1
+4	149	0.20496610363	3
+4	153	0.21319010363	1
+4	171	0.229126653432	3
+4	175	0.237350653432	1
+4	190	0.270892379754	0
+4	195	0.279308379754	1
+4	212	0.31947370895	3
+4	216	0.32769770895	1
+4	231	0.393665912709	0
+4	236	0.402081912709	1
+4	253	0.415788082374	3
+4	261	0.424012082374	1
+4	273	0.424972082374	3
+4	277	0.433196082374	1
+4	292	0.43744377798	0
+4	298	0.44585977798	1
+4	315	0.475359818643	3
+4	323	0.483583818643	1
+4	335	0.484223818643	3
+4	339	0.492447818643	1
+5	0	0	1
+5	27	0.062931049784	3
+5	40	0.071155049784	1
+5	47	0.072115049784	3
+5	56	0.080339049784	1
+5	69	0.095770256227	3
+5	78	0.103994256227	1
+5	89	0.11253758698	3
+5	95	0.12076158698	1
+5	110	0.162903558154	3
+5	115	0.171127558154	1
+5	131	0.195782928246	3
+5	144	0.204006928246	1
+5	151	0.204966928246	3
+5	160	0.213190928246	1
+5	173	0.229127478048	3
+5	182	0.237351478048	1
+5	193	0.27108571401	3
+5	198	0.27930971401	1
+5	214	0.319474533566	3
+5	223	0.327698533566	1
+5	234	0.393859246965	3
+5	239	0.402083246965	1
+5	255	0.41578890699	3
+5	268	0.42401290699	1
+5	275	0.42497290699	3
+5	284	0.43319690699	1
+5	295	0.437637112236	3
+5	301	0.445861112236	1
+5	317	0.475360643259	3
+5	330	0.483584643259	1
+5	337	0.484224643259	3
+5	346	0.492448643259	1
+6	0	0	1
+6	23	0.06273755804	0
+6	32	0.07115355804	1
+6	43	0.07192155804	0
+6	48	0.08033755804	1
+6	65	0.095576764483	0
+6	70	0.103992764483	1
+6	88	0.112536919852	3
+6	93	0.120760919852	1
+6	109	0.162902891026	3
+6	113	0.171126891026	1
+6	127	0.195589436502	0
+6	136	0.204005436502	1
+6	147	0.204773436502	0
+6	152	0.213189436502	1
+6	169	0.228933986304	0
+6	174	0.237349986304	1
+6	192	0.271085046882	3
+6	196	0.279309046882	1
+6	210	0.319281041822	0
+6	215	0.327697041822	1
+6	233	0.393858579837	3
+6	237	0.402082579837	1
+6	251	0.415595415246	0
+6	260	0.424011415246	1
+6	271	0.424779415246	0
+6	276	0.433195415246	1
+6	294	0.437636445108	3
+6	299	0.445860445108	1
+6	313	0.475167151515	0
+6	322	0.483583151515	1
+6	333	0.484031151515	0
+6	338	0.492447151515	1
+7	0	0	1
+7	26	0.062930892296	3
+7	35	0.071154892296	1
+7	46	0.072114892296	3
+7	51	0.080338892296	1
+7	68	0.095770098739	3
+7	73	0.103994098739	1
+7	130	0.195782770758	3
+7	139	0.204006770758	1
+7	150	0.204966770758	3
+7	155	0.213190770758	1
+7	172	0.22912732056	3
+7	177	0.23735132056	1
+7	213	0.319474376078	3
+7	218	0.327698376078	1
+7	254	0.415788749502	3
+7	263	0.424012749502	1
+7	274	0.424972749502	3
+7	279	0.433196749502	1
+7	316	0.475360485771	3
+7	325	0.483584485771	1
+7	336	0.484224485771	3
+7	341	0.492448485771	1
+8	17	0.06228955804	1000
+8	28	0.065792638186	1000
+8	60	0.094808764483	1000
+8	122	0.195141436502	1000
+8	132	0.200611098069	1000
+8	164	0.228165986304	1000
+8	205	0.318513041822	1000
+8	246	0.414827415246	1000
+8	256	0.422379879812	1000
+8	308	0.474719151515	1000
+8	318	0.481435921153	1000
+8	349	0.499872742282	1000
+9	19	0.06228955804	1008
+9	29	0.065792638186	1008
+9	61	0.094808764483	1008
+9	123	0.195141436502	1008
+9	133	0.200611098069	1008
+9	165	0.228165986304	1008
+9	206	0.318513041822	1008
+9	247	0.414827415246	1008
+9	257	0.422379879812	1008
+9	309	0.474719151515	1008
+9	319	0.481435921153	1008
+9	350	0.499872742282	1008
+10	23	0.06273755804	1
+10	24	0.06292955804	2
+10	32	0.07115355804	1
+10	32	0.07115355804	0
+10	43	0.07192155804	1
+10	44	0.07211355804	2
+10	48	0.08033755804	1
+10	48	0.08033755804	0
+10	65	0.095576764483	1
+10	66	0.095768764483	2
+10	70	0.103992764483	1
+10	70	0.103992764483	0
+10	127	0.195589436502	1
+10	128	0.195781436502	2
+10	136	0.204005436502	1
+10	136	0.204005436502	0
+10	147	0.204773436502	1
+10	148	0.204965436502	2
+10	152	0.213189436502	1
+10	152	0.213189436502	0
+10	169	0.228933986304	1
+10	170	0.229125986304	2
+10	174	0.237349986304	1
+10	174	0.237349986304	0
+10	210	0.319281041822	1
+10	211	0.319473041822	2
+10	215	0.327697041822	1
+10	215	0.327697041822	0
+10	251	0.415595415246	1
+10	252	0.415787415246	2
+10	260	0.424011415246	1
+10	260	0.424011415246	0
+10	271	0.424779415246	1
+10	272	0.424971415246	2
+10	276	0.433195415246	1
+10	276	0.433195415246	0
+10	313	0.475167151515	1
+10	314	0.475359151515	2
+10	322	0.483583151515	1
+10	322	0.483583151515	0
+10	333	0.484031151515	1
+10	334	0.484223151515	2
+10	338	0.492447151515	1
+10	338	0.492447151515	0
+11	38	0.071154892296	1008
+11	54	0.080338892296	1008
+11	76	0.103994098739	1008
+11	142	0.204006770758	1008
+11	158	0.213190770758	1008
+11	180	0.23735132056	1008
+11	221	0.327698376078	1008
+11	266	0.424012749502	1008
+11	282	0.433196749502	1008
+11	328	0.483584485771	1008
+11	344	0.492448485771	1008
+12	38	0.071154892296	1
+12	54	0.080338892296	2
+12	76	0.103994098739	3
+12	142	0.204006770758	4
+12	158	0.213190770758	5
+12	180	0.23735132056	6
+12	221	0.327698376078	7
+12	266	0.424012749502	8
+12	282	0.433196749502	9
+12	328	0.483584485771	10
+12	344	0.492448485771	11
+13	39	0.071154892296	1000
+13	55	0.080338892296	1000
+13	77	0.103994098739	1000
+13	143	0.204006770758	1000
+13	159	0.213190770758	1000
+13	181	0.23735132056	1000
+13	222	0.327698376078	1000
+13	267	0.424012749502	1000
+13	283	0.433196749502	1000
+13	329	0.483584485771	1000
+13	345	0.492448485771	1000
+14	39	0.071154892296	0.008865334256
+14	55	0.080338892296	0.01454625411
+14	77	0.103994098739	0.009185334256
+14	143	0.204006770758	0.008865334256
+14	159	0.213190770758	0.012579672689
+14	181	0.23735132056	0.009185334256
+14	222	0.327698376078	0.009185334256
+14	267	0.424012749502	0.009185334256
+14	283	0.433196749502	0.01081686969
+14	329	0.483584485771	0.008865334256
+14	345	0.492448485771	0.011012564618
+15	39	0.071154892296	0
+15	55	0.080338892296	1
+15	77	0.103994098739	2
+15	143	0.204006770758	3
+15	159	0.213190770758	4
+15	181	0.23735132056	5
+15	222	0.327698376078	6
+15	267	0.424012749502	7
+15	283	0.433196749502	8
+15	329	0.483584485771	9
+15	345	0.492448485771	10
+16	77	0.1	160000
+16	143	0.2	80000
+16	222	0.3	240000
+16	267	0.4	80000
+17	80	0.111576252724	1000
+17	102	0.161942223898	1000
+17	185	0.270444379754	1000
+17	226	0.392897912709	1000
+17	287	0.43699577798	1000
+18	82	0.111576252724	1008
+18	103	0.161942223898	1008
+18	186	0.270444379754	1008
+18	227	0.392897912709	1008
+18	288	0.43699577798	1008
+19	86	0.112344252724	1
+19	87	0.112536252724	2
+19	92	0.120760252724	1
+19	92	0.120760252724	0
+19	107	0.162710223898	1
+19	108	0.162902223898	2
+19	112	0.171126223898	1
+19	112	0.171126223898	0
+19	190	0.270892379754	1
+19	191	0.271084379754	2
+19	195	0.279308379754	1
+19	195	0.279308379754	0
+19	231	0.393665912709	1
+19	232	0.393857912709	2
+19	236	0.402081912709	1
+19	236	0.402081912709	0
+19	292	0.43744377798	1
+19	293	0.43763577798	2
+19	298	0.44585977798	1
+19	298	0.44585977798	0
+20	98	0.12076158698	1008
+20	118	0.171127558154	1008
+20	201	0.27930971401	1008
+20	242	0.402083246965	1008
+20	304	0.445861112236	1008
+21	98	0.12076158698	1
+21	118	0.171127558154	2
+21	201	0.27930971401	3
+21	242	0.402083246965	4
+21	304	0.445861112236	5
+22	99	0.12076158698	1000
+22	119	0.171127558154	1000
+22	202	0.27930971401	1000
+22	243	0.402083246965	1000
+22	305	0.445861112236	1000
+23	99	0.1	0
+23	202	0.2	160000
+23	243	0.3	80000
+23	243	0.4	0
+24	99	0.12076158698	0.009185334256
+24	119	0.171127558154	0.009185334256
+24	202	0.27930971401	0.008865334256
+24	243	0.402083246965	0.009185334256
+24	305	0.445861112236	0.008865334256
+25	99	0.12076158698	0
+25	119	0.171127558154	1
+25	202	0.27930971401	2
+25	243	0.402083246965	3
+25	305	0.445861112236	4
+
